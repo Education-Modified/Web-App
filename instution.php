@@ -17,6 +17,8 @@ class instution{
 	private $instutionName;
 	//holds the id of an insution
 	private $instutionID;
+	//holds all of the students
+	private $students = array();
 
 	/**
 	* the constructor like the rest of the classes for this applicaiton
@@ -52,6 +54,26 @@ class instution{
 			return true;
 		}
 		//if there was a probem this method returns false
+		return false;
+	}
+
+	/**
+	* this method adds a student to a the studetns array list
+	* if the object it not a studetn it will return false
+	* other wise it will return true
+	*
+	* @peram student obj
+	* @return if it has worked
+	*/
+	public function addStudent($studentObj){
+		//checks to see if it is a student object
+		if($studentObj instanceof student){
+			//pushes it to the array
+			array_push($this->students, $studentObj)
+			//returns true for success
+			return true;
+		}
+		//returns false for falire
 		return false;
 	}
 
@@ -113,5 +135,37 @@ class instution{
 		//returns the name
 		return $this->instutionName;
 	}
+
+	/**
+	* this method returns all of the students at the instution as an
+	* array 
+	*
+	* @return students array
+	*/
+	public function getStudents(){
+		return $this->students;
+	}
+
+	/**
+	* this method finds a studetn based off of first and last name
+	* if one is found with the same first and last name will return 
+	* the studetn object otherwise it will return false if it has failed
+	* to find it
+	*
+	* @return student object 
+	*/
+	public function getStudent($firstName, $lastName){
+		//runs though all of the students
+		foreach($this->students as $studentObj){
+			//checks the first and last name
+			if($studentObj->getName('F') == $firstName && $studentObj->getName() == $lastName){
+				//returns the object
+				return $studentObj;
+			}
+		}
+		//returns false for failer
+		return false;
+	}
+
 }
 ?>
