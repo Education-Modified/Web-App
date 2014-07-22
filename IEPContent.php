@@ -28,10 +28,10 @@ class IEPContent{
 	*/
 	function __construct($args){
 		//geatehrs all of the grade ids to content
-		$gradeJson = file_get_contents('grade.json');
+		$gradeJson = file_get_contents('JosnFiles/grade.json');
 		$gradeContent = json_decode($gradeJson);
 		//grabs all of the subjects form the json file
-		$subjectJson = file_get_contents("subject.json");
+		$subjectJson = file_get_contents("JosnFiles/subject.json");
 		$subjectContent = json_decode($subjectJson);
 		//instance varuables are initislaised
 		$this->id = $args['id'] + 0;
@@ -79,10 +79,6 @@ class IEPContent{
 	public function getSubejct(){
 		return $this->subject;
 	}
-
-
 }
-
-
 
 ?>
