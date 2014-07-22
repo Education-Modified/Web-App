@@ -163,9 +163,8 @@ class instution{
 				return $studentObj;
 			}
 		}
-		//returns false for failer
+		//returns false is for failer
 		return false;
 	}
-
 }
 ?>
