@@ -82,6 +82,28 @@ class instution{
 	}
 
 	/**
+	* this method gets a teacher on by last name and will return
+	* a refrance to the spsifc teacher object
+	*
+	* @peram $teacher name
+	* @peram teacher last name optional
+	* @return teacher object or false if the teacher is not found
+	*/
+	public function getTeacher($name, $lastName = null){
+		//runs though all of the teacher objects
+		foreach($this->teachers as $teacher){
+			//checks to see if the frist and last names are equal or if the last name is equal to null
+			if($teacher->getName('F') == $name && ($lastName == null || $teacher->getName('L') == $lastName)){
+				//returns the teacher name
+				return $teacher;
+			}
+		}
+		//if nothing is found the method returns false
+		return false;
+	}
+
+
+	/**
 	* this method gets the name of the instution and returnds it as 
 	* string 
 	*

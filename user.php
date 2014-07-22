@@ -119,8 +119,7 @@
 		* @return true for it is right false for if it is wrong
 		*/
 		public function checkPass($password){
-			//here we use the password hash libary which is more 
-			//sicure than just useing the regualr old hash and check 
+			//check to see if the hashes are equal
 			return hash("sha1", $password) == $this->passwordHashed;
 		}
 
