@@ -1,4 +1,5 @@
 <?php
+
 /* * * * * * * * * * * * * * * * * * * * *
  * Giovanni Rescingo - GPL 2.0			 *
  * * * * * * * * * * * * * * * * * * * * *
@@ -8,12 +9,19 @@
 
 class StudentFolderItem{
 
+	//holds the id form the table but not the student id
 	private $id;
+	//holds the mms content object
 	private $mssContent;
+	//holds the iepcontent object
 	private $iepContent;
+	//holds the date that this item was added
 	private $dateAdded;
+	//holds the student id given to the studetn by the DOE 
 	private $studentId;
+	//holds the id of th teacher this is in refrance ot the table
 	private $teacherId;
+	//holds the status of the studetns current goals
 	private $goalStatus;
 
 	/**
@@ -113,5 +121,7 @@ class StudentFolderItem{
 	public function getTeacherID(){
 		return $this->teacherId;
 }
+
+
 
 ?>
