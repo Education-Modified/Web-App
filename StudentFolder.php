@@ -34,7 +34,9 @@ class StudentFolderItem{
 	function __construct($args){
 		//args is assined to all of the instance varables
 		$this->id = $args['id'] + 0;
+		//the mss_content_id element is set to an MssContent object before constructed
 		$this->mssContent = $args['mss_content_id'];
+		//the iep_content_id element is set to an IEPContent object before constructed
 		$this->iepContent = $args['iep_content_id'];
 		$this->dateAdded = $args['date'];
 		$this->studentId = $args['student_id'];

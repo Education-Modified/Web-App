@@ -15,8 +15,12 @@ class student{
 	private $student_ID;
 	//holds all of the student folder item objects assuated with this student
 	private $student_folder_items = array();
-	//student disablitys
-	private $disablitys = array();
+	//student disabilities
+	private $disabilities = array();
+	//holds the instution id
+	private $instutionID;
+	//holds a short Discrption
+	private $anecdotals;
 
 	/**
 	* like the rest of the methods this function is syplyed an array list
@@ -29,6 +33,10 @@ class student{
 		$this->first_Name = $args['first_name'];
 		$this->last_Name = $args['last_name'];
 		$this->student_ID = $args['student_id'] + 0;
+		$this->instutionID = $args['institution_id'] + 0;
+		$this->anecdotals = $args['anecdotals'];
+		//the disabilities elemtn of the $args array list must be replaceed with disablityObjects before Construction
+		$this->disabilities = $args['disabilities'];
 	}
 
 	/**
@@ -133,6 +141,57 @@ class student{
 		}
 		//other wise it will return false
 		return false;
+	}
+
+	/**
+	* this method returns all of the disabilities that a given student has 
+	* as an array 
+	* 
+	* @return array of disabilities
+	*/
+	public function getDisabilities(){
+		return $this->disabilities;
+	}
+
+	/**
+	* this method checks to see if a student has a given disablity 
+	* this method can take ither a string or a disablity object
+	* if the student has the disablity this method will return true 
+	* other wise it will return false
+	*
+	* @peram disablity name or disablity object
+	* @return a boolena true for yes false for no
+	*/
+	public function hasDisablity($disablity){
+		//checsk to see if the pearm is an instace of the object
+		if($disablity instanceof disablity){
+			//runs thought all of the posablitys
+			foreach($this->disabilities as $disable){
+				//checks to see if they are equal
+				if($disablity->getID() == $disable->getID()){
+					return true;
+				}
+			}
+		}else{
+			//runs thought the posablitys
+			foreach($this->disabilities as $disable){
+				//checks to see if equal
+				if($disable->getName() == $disablity){
+					return ture;
+				}
+			}
+		}
+		//if all test fail it will return false
+		return false;
+	}
+	/**
+	* this method returns the anecdotals of this student
+	* which is a short message which talks about a speifc student
+	* 
+	* @return anecdotals String
+	*/
+	public function getAnecdotals(){
+		return $this->anecdotals;
 	}
 }
 ?>
