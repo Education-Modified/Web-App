@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Web-app by Education-Modified</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Web-app</h1>
+        <p>this is the main webapp for Education Modified. </p>
+
+        <p class="view"><a href="https://github.com/Education-Modified/Web-App">View the Project on GitHub <small>Education-Modified/Web-App</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/Education-Modified/Web-App/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/Education-Modified/Web-App/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/Education-Modified/Web-App">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="class-refrance" class="anchor" href="#class-refrance"><span class="octicon octicon-link"></span></a>class refrance</h1>
+
+<p>this refrance probalby has some mistakes plz contact me if something is not right i wont be affedned, and yes i said plz because i can!!!!! </p>
+
+<hr><h2>
+<a name="user-class" class="anchor" href="#user-class"><span class="octicon octicon-link"></span></a>User Class</h2>
+
+<h3>
+<a name="function-__construct-array-function_arumetns-" class="anchor" href="#function-__construct-array-function_arumetns-"><span class="octicon octicon-link"></span></a><code>function __construct( array $function_arumetns )</code>
+</h3>
+
+<p>the argumetns of this function are fed though a keyed array. each elemnt of the array has a key which matches the colom name in the mysql data base which the data is suplyed from. the reson why this is done is to make it extremly esasy to transfur the mysql data in to object form. </p>
+
+<h4>
+<a name="delcoration-example" class="anchor" href="#delcoration-example"><span class="octicon octicon-link"></span></a>Delcoration Example</h4>
+
+<pre><code>//create a the keyed array
+$function_arumetns = array(
+  'email_id' =&gt; 'mail@example.com',
+  'sub_start_date' =&gt; '2011-01-07',
+  'sub_end_date' =&gt; '2015-01-07',
+  'first_name' =&gt; 'billy',
+  'second_name' =&gt; 'bob',
+  'password' =&gt; hash("sha1", '123'),
+  'id' =&gt; '0',
+  'portal_assigned' =&gt; 'Teacher,Collaboration',
+  'user_type' =&gt; 'TEACHER',
+  'institution_name' =&gt; 'AFSE'
+  );
+
+//initalisuing teacher
+$teacher = new user($function_arumetns);
+</code></pre>
+
+<h4>
+<a name="peramitors" class="anchor" href="#peramitors"><span class="octicon octicon-link"></span></a>peramitors</h4>
+
+<h5>
+<a name="email_id" class="anchor" href="#email_id"><span class="octicon octicon-link"></span></a><code>'email_id'</code>
+</h5>
+
+<p>this element holds the <strong>eamil</strong> of a given user as a string. the  <code>email_id</code> also doubles as a user name for a teacher. </p>
+
+<h5>
+<a name="sub_start_date" class="anchor" href="#sub_start_date"><span class="octicon octicon-link"></span></a><code>'sub_start_date'</code>
+</h5>
+
+<p>this element holds the date at which the users acount has/will become active the user. a user can not accsee his or her account if the start date has not passed. the date is spified by useing a <code>'YY-MM-DD'</code> format</p>
+
+<h5>
+<a name="sub_end_date" class="anchor" href="#sub_end_date"><span class="octicon octicon-link"></span></a><code>'sub_end_date'</code>
+</h5>
+
+<p>this element holds the date at which the the users acount becomes invalid if the spesifed date has passed the user acount will be unaxessable. simalr to the <code>'sub_start_date'</code> element the date is spified by useing a <code>'YY-MM-DD'</code> format</p>
+
+<h5>
+<a name="first_name" class="anchor" href="#first_name"><span class="octicon octicon-link"></span></a><code>'first_name'</code>
+</h5>
+
+<p>this element is pretty self explanotory it holds the frist name of the user. this is given as a basic string.</p>
+
+<h5>
+<a name="second_name" class="anchor" href="#second_name"><span class="octicon octicon-link"></span></a><code>'second_name'</code>
+</h5>
+
+<p>the second name is the last name of a user. this is given as a basic string</p>
+
+<h5>
+<a name="password" class="anchor" href="#password"><span class="octicon octicon-link"></span></a><code>'password'</code>
+</h5>
+
+<p>this element holds the password of the user has a hash <strong>not the password litral</strong> the system usese the <code>sha1</code> hash as the alogorimum. you can has any string litral by runing <code>hash("sha1", '123')</code>. </p>
+
+<h5>
+<a name="id" class="anchor" href="#id"><span class="octicon octicon-link"></span></a><code>'id'</code>
+</h5>
+
+<p>this element holds the id that the spsific user was assigned to in the database. it can be a string or a intager</p>
+
+<h5>
+<a name="portal_assigned" class="anchor" href="#portal_assigned"><span class="octicon octicon-link"></span></a><code>'portal_assigned'</code>
+</h5>
+
+<p>this element holds which portals that this speific user can acsess. </p>
+
+<h5>
+<a name="user_type" class="anchor" href="#user_type"><span class="octicon octicon-link"></span></a><code>'user_type'</code>
+</h5>
+
+<p>this element states wearhter or not a user is an admin or a teacher by givening it a string. for admin it should be set to  <code>'ADMIN'</code> and for teacher it should be set to <code>'TEACHER'</code></p>
+
+<h5>
+<a name="institution_name" class="anchor" href="#institution_name"><span class="octicon octicon-link"></span></a><code>'institution_name'</code>
+</h5>
+
+<p>this elemetn holds the name of the istution <em>"school"</em> that the teacher works at. this elment is not reafranc to an instution object it is only a string which shares a name with one of the instutions in the data base.</p>
+
+<hr><h3>
+<a name="public-function-hasexipred" class="anchor" href="#public-function-hasexipred"><span class="octicon octicon-link"></span></a><code>public function hasExipred()</code>
+</h3>
+
+<p>this method checks to see if the users acount is still valid (weather or not the exporation date has passed) if the user acount has expired this method will return <code>true</code> it is still valid it will return <code>false</code>.</p>
+
+<hr><h3>
+<a name="public-function-getinstitution" class="anchor" href="#public-function-getinstitution"><span class="octicon octicon-link"></span></a><code>public function getInstitution()</code>
+</h3>
+
+<p>this method simply returns the the name of the instution that the teacher works at as a string. this method is used when the users are being incerted into a instuiton class (explaned in the intion class doucmetnation). this method dose not return a refrance to the instution object it only reutrns the name.</p>
+
+<hr><h3>
+<a name="public-function-geteamil" class="anchor" href="#public-function-geteamil"><span class="octicon octicon-link"></span></a><code>public function getEamil()</code>
+</h3>
+
+<p>this method reutrns the email of the user which doubles as the username for the user (teacher). this method reutnrs a stirng with the email in it. </p>
+
+<hr><h3>
+<a name="public-function-getname-first_or_last-" class="anchor" href="#public-function-getname-first_or_last-"><span class="octicon octicon-link"></span></a><code>public function getName( $first_or_last )</code>
+</h3>
+
+<p>this method reutrns the first or last name of the user based on the state of the peramitor. both names are returnd as strings </p>
+
+<h4>
+<a name="delcoration-example-1" class="anchor" href="#delcoration-example-1"><span class="octicon octicon-link"></span></a>Delcoration Example</h4>
+
+<pre><code>//user instance alreay dicaleaderd
+$user = new user($args);
+
+//this will print the frist name
+print $user-&gt;getName("F");
+
+//this will print the last name
+print $user-&gt;getName("L");
+</code></pre>
+
+<h4>
+<a name="peramitors-1" class="anchor" href="#peramitors-1"><span class="octicon octicon-link"></span></a>peramitors</h4>
+
+<h5>
+<a name="first_or_last" class="anchor" href="#first_or_last"><span class="octicon octicon-link"></span></a><code>$first_or_last</code>
+</h5>
+
+<p>when <code>$first_or_last = "F"</code> it will reutrn the frist name when <code>$first_or_last = "L"</code> it will return the last name  of the user. </p>
+
+<hr><h3>
+<a name="public-function-checkpass-password-" class="anchor" href="#public-function-checkpass-password-"><span class="octicon octicon-link"></span></a><code>public function checkPass( $password )</code>
+</h3>
+
+<p>this method checks to see if the password given is the same as the hashed password of the user. if the two password are equal this method will return <code>true</code> other wise it will reutnr <code>false</code></p>
+
+<h4>
+<a name="delcoration-example-2" class="anchor" href="#delcoration-example-2"><span class="octicon octicon-link"></span></a>Delcoration Example</h4>
+
+<pre><code>//user instance alreay dicaleaderd and the password is set to "123"
+$user = new user($args); 
+
+//this will return false
+$user-&gt;checkPass('321');
+
+//this will return true
+$user-&gt;checkPass('123');
+
+</code></pre>
+
+<h4>
+<a name="peramitors-2" class="anchor" href="#peramitors-2"><span class="octicon octicon-link"></span></a>peramitors</h4>
+
+<h5>
+<a name="password-1" class="anchor" href="#password-1"><span class="octicon octicon-link"></span></a><code>$password</code>
+</h5>
+
+<p>the password peramitor takes a string holds the unhased verstion of a password of the user. </p>
+
+<hr>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/Education-Modified">Education-Modified</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
