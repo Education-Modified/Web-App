@@ -17,7 +17,7 @@ class StudentFolderItem{
 	private $iepContent;
 	//holds the date that this item was added
 	private $dateAdded;
-	//holds the student id given to the studetn by the DOE 
+	//holds the student id given to the student by the DOE 
 	private $studentId;
 	//holds the id of th teacher this is in refrance ot the table
 	private $teacherId;
@@ -122,6 +122,7 @@ class StudentFolderItem{
 	*/
 	public function getTeacherID(){
 		return $this->teacherId;
+	}
 }
 
 
