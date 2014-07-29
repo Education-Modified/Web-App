@@ -42,13 +42,13 @@ class MSSContent{
 
 		//the json is being parced here for the gradeLevel
 		$gradeLevelJsonString = file_get_contents("JsonFiles/grade.json");
-		$gradeLevelJson = json_decode($gradeLevelJsonString);
+		$gradeLevelJson = json_decode($gradeLevelJsonString, true);
 		//the varuable is finaly assigned
 		$this->gradeLevel = $gradeLevelJson[$args['iep_grades_id']];
 
 		//the json is being parced here for the learingStyle
 		$learingStyleJsonString = file_get_contents("JsonFiles/learingStyles.json");
-		$learingStyleJson = json_decode($learingStyleJsonString);
+		$learingStyleJson = json_decode($learingStyleJsonString, true);
 		//the varables is finaly assigned
 		$this->learning_style = $learingStyleJson[$args['learning_style_id'] + 0];
 
@@ -78,8 +78,70 @@ class MSSContent{
 		return $this->mss_skill;
 	}
 
-	
+	/**
+	* this method returns the image url for the spesifc stratage
+	* as a string. 
+	*
+	* @return String with url to image
+	*/
+	public function getImage(){
+		//returns image url
+		return $this->image;
+	}
 
+	/**
+	* this method returns the text content for the discription of 
+	* the stratiage 
+	*
+	* @return string
+	*/
+	public function getContent(){
+		//returns content
+		return $this->content;
+	}
+
+	/**
+	* this method returns a mode object the refrance to this
+	* object can be found in mode.php 
+	*
+	* @return mode object
+	*/
+	public function getMode(){
+		//returns mode
+		return $this->mode;
+	}
+
+	/**
+	* this method returns the grade level of a strudent as a
+	* string not an id.
+	*
+	* @return grade level String 
+	*/
+	public function getGradeLevel(){
+		//returns grade level
+		return $this->gradeLevel;
+	}
+
+	/**
+	* this method returns the learing style of this stratagy
+	* as a string this is used as a tag
+	*
+	* @return learning style tag
+	*/
+	public function getLearningStyle(){
+		//returns learning style
+		return $this->learning_style;
+	}
+
+	/**
+	* this method returns the id of this stratagey 
+	* as it would be in the mysql data base
+	*
+	* @return intager
+	*/
+	public function getID(){
+		return $this->id;
+	}
 }
 
 
