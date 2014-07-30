@@ -37,12 +37,8 @@ class MSSContent{
 		$this->image = $args['image'];
 		//mss content text contenet
 		$this->content = $args['content'];
-
-		//the json is being parced here for the mode
-		$modeJsonString = file_get_contents("JsonFiles/mode.json");
-		$modeJson = json_decode($modeJsonString, true);
-		//this holds a string which is an id
-		$this->mode = $modeJson[$args['mode']];
+		//this holds the mode object which is constructed outside of the class
+		$this->mode = $args['mode'];
 
 		//the json is being parced here for the gradeLevel
 		$gradeLevelJsonString = file_get_contents("JsonFiles/grade.json");
@@ -105,10 +101,10 @@ class MSSContent{
 	}
 
 	/**
-	* this method returns a string which shows what the mode is 
-	* of this content
+	* this method returns a mode object the refrance to this
+	* object can be found in mode.php 
 	*
-	* @return mode string
+	* @return mode object
 	*/
 	public function getMode(){
 		//returns mode
