@@ -108,7 +108,7 @@ class MSSContent{
 	* this method returns a string which shows what the mode is 
 	* of this content
 	*
-	* @return mode string
+	* @return mode String
 	*/
 	public function getMode(){
 		//returns mode
